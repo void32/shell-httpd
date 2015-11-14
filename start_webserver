@@ -1,0 +1,4 @@
+#!/bin/bash
+PORT=8080
+CMD='./my_http_deamon'
+socat tcp-listen:8080,reuseaddr,fork exec:"$CMD"
