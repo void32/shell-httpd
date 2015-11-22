@@ -1,35 +1,17 @@
 #!/bin/bash
 
-# Send HTTP header berfore the actual data
-echo HTTP/1.0 200 OK
+
+echo "HTTP/1.0 200 OK"
+echo "Content-Type: Image/png"
 echo
 
-# HTML start tags
-echo '<html>'
-echo '<head>'
-# Here you put the html head stuff you what on your page...
-
-echo '</head>'
-
-
-echo '<body>'
-# Here you put the html body stuff you what on your page...
 
 # For example - interpret the user request and generate web page from that:
 read request
 option=$(echo "$request" | cut -d ' ' -f 2)
-case "$option" in
-    (/knockknock )
-        echo "Who's There?"
-        ;;
-    (/date )
-        date
-        ;;
-    (/calc\?*)
-        echo "${option##*\?}" | bc -l
-        ;;
-esac
 
-# HTML end tags
-echo '</body>'
-echo '</html>'
+case "$option" in
+    (/image/)
+		cat image.png
+	:;
+esac
