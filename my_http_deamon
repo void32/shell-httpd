@@ -1,9 +1,5 @@
 #!/bin/bash
-
-
 echo "HTTP/1.0 200 OK"
-echo "Content-Type: Image/png"
-echo
 
 
 # For example - interpret the user request and generate web page from that:
@@ -12,6 +8,24 @@ option=$(echo "$request" | cut -d ' ' -f 2)
 
 case "$option" in
     (/image/)
+		echo "Content-Type: Image/png"
+		echo
+
 		cat image.png
-	:;
+	;;
+	(/tux/)
+		echo
+
+		echo '<html>'
+		echo 	'<head>'
+		echo 		'<title>Page Title</title>'
+		echo 	'</head>'
+		echo 	'<body>'
+		echo 		'<h1>This is a Heading</h1>'
+		echo 		'<p>This is a paragraph.</p>'
+		echo 		'Tux :-)<br>'
+		echo 		'<img src="http://localhost:8080/image/" />'
+		echo 	'</body>'
+		echo '</html>'
+		;;
 esac
