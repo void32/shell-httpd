@@ -25,6 +25,8 @@ case "$option" in
 		echo 		'<p>This is a paragraph.</p>'
 		echo 		'Tux :-)<br>'
 		echo 		'<img src="http://localhost:8080/image/" />'
+					'<p>Permission details</p>'
+		echo			'<a href="https://en.wikipedia.org/wiki/Linux#/media/File:Tux.svg">The copyright holder of this file allows anyone to use it for any purpose, provided that the copyright holder is properly attributed. Redistribution, derivative work, commercial use, and all other use is permitted.</a>'
 		echo 	'</body>'
 		echo '</html>'
 		;;
